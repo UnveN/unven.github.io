@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<body>
+	<head>
 		<script>
-			function clickHandler(e)
+			function clickHandler(target, e)
 			{
 				document.getElementById('log').value +=
-					'clientX = ' + e.clientX +
+					'target = ' + target.tagName + 
+					'; clientX = ' + e.clientX +
 					'; clientY = ' + e.clientY +
 					'; offsetX = ' + e.offsetX +
 					'; offsetY = ' + e.offsetY +
 					'\n';
 			}
 		</script>
-		<textarea id="log" rows="30" cols="100"></textarea>
-		<div style="width: 100px; height: 100px; position: absolute; left: 500px; top: 500px; background-color: coral" onclick="clickHandler(event)">Click me!<br>Client offset:<br>500 x 500 px<br>Size:<br>100 x 100 px</div>
+	</head>
+	<body onclick="clickHandler(this, event)">
+		<textarea id="log" rows="50" cols="100"></textarea>
+		<div style="width: 100px; height: 100px; position: absolute; left: 1000px; top: 500px; background-color: coral" onclick="clickHandler(this, event)">Click me!<br>Client offset:<br>1000 x 500 px<br>Size:<br>100 x 100 px</div>
 	</body>
 </html>
