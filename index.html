@@ -6,16 +6,14 @@
 			{
 				document.getElementById('log').value +=
 					'target = ' + target.tagName + 
-					'; clientX = ' + e.clientX +
-					'; clientY = ' + e.clientY +
-					'; offsetX = ' + e.offsetX +
-					'; offsetY = ' + e.offsetY +
+					'; client = (' + e.clientX + ', ' + e.clientY + ')' +
+					'; offset = (' + e.offsetX + ', ' + e.offsetY + ')' +
 					'\n';
 			}
 		</script>
 	</head>
 	<body onclick="clickHandler(this, event)">
-		<textarea id="log" rows="50" cols="100"></textarea>
-		<div style="width: 100px; height: 100px; position: absolute; left: 1000px; top: 500px; background-color: coral" onclick="clickHandler(this, event)">Click me!<br>Client offset:<br>1000 x 500 px<br>Size:<br>100 x 100 px</div>
+		<textarea id="log" rows="50" cols="55"></textarea>
+		<div style="width: 100px; height: 100px; position: absolute; left: 500px; top: 500px; background-color: coral" onclick="clickHandler(this, event)">Click me!<br>Client offset:<br>500 x 500 px<br>Size:<br>100 x 100 px</div>
 	</body>
 </html>
